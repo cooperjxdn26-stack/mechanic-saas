@@ -12,6 +12,51 @@ function emptyAuthState(): AuthState {
   } as AuthState;
 }
 
+function normalizeSession(sessionOrToken: any, userParam?: any): AuthState {
+  if (typeof sessionOrToken === "string") {
+    return {
+      ...emptyAuthState(),
+      token: sessionOrToken,
+      user: userParam ?? null,
+      isAuthenticated: true,
+      isLoading: false,
+    } as AuthState;
+  }
+
+  const token =
+    sessionOrToken?.token ||
+    sessionOrToken?.accessToken ||
+    sessionOrToken?.data?.token ||
+    sessionOrToken?.data?.accessToken ||
+    null;
+
+  const user =
+    sessionOrToken?.user || sessionOrToken?.data?.user || userParam || null;
+
+  const permissions =
+    sessionOrToken?.permissions ||
+    sessionOrToken?.data?.permissions ||
+    user?.permissions ||
+    [];
+
+  const normalizedUser = user
+    ? {
+        ...user,
+        permissions,
+      }
+    : null;
+
+  return {
+    ...emptyAuthState(),
+    ...sessionOrToken,
+    token,
+    user: normalizedUser,
+    permissions,
+    isAuthenticated: Boolean(token),
+    isLoading: false,
+  } as AuthState;
+}
+
 export function getInitialAuthState(): AuthState {
   if (typeof window === "undefined") {
     return emptyAuthState();
@@ -26,17 +71,12 @@ export function getInitialAuthState(): AuthState {
     }
 
     const parsedSession = storedSession ? JSON.parse(storedSession) : {};
-
-    const token =
-      parsedSession?.token || parsedSession?.accessToken || storedToken || null;
-
-    return {
-      ...emptyAuthState(),
+    const session = normalizeSession({
       ...parsedSession,
-      token,
-      isAuthenticated: Boolean(token),
-      isLoading: false,
-    } as AuthState;
+      token: parsedSession?.token || storedToken,
+    });
+
+    return session;
   } catch (error) {
     console.error("Error leyendo sesión de autenticación:", error);
     clearAuthSession();
@@ -45,33 +85,7 @@ export function getInitialAuthState(): AuthState {
 }
 
 export function persistAuthSession(sessionOrToken: any, user?: any): AuthState {
-  let session: AuthState;
-
-  if (typeof sessionOrToken === "string") {
-    session = {
-      ...emptyAuthState(),
-      token: sessionOrToken,
-      user: user ?? null,
-      isAuthenticated: true,
-      isLoading: false,
-    } as AuthState;
-  } else {
-    const token =
-      sessionOrToken?.token ||
-      sessionOrToken?.accessToken ||
-      sessionOrToken?.data?.token ||
-      sessionOrToken?.data?.accessToken ||
-      null;
-
-    session = {
-      ...emptyAuthState(),
-      ...sessionOrToken,
-      token,
-      user: sessionOrToken?.user || sessionOrToken?.data?.user || user || null,
-      isAuthenticated: Boolean(token),
-      isLoading: false,
-    } as AuthState;
-  }
+  const session = normalizeSession(sessionOrToken, user);
 
   if (typeof window !== "undefined") {
     localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(session));

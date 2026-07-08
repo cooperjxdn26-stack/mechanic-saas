@@ -1,32 +1,37 @@
-# Dependencias
+@"
+# Dependencies
 node_modules/
-backend/node_modules/
-frontend/node_modules/
+*/node_modules/
 
-# Variables de entorno
-.env
-.env.local
-.env.production
-backend/.env
-frontend/.env
-frontend/.env.local
-
-# Builds
+# Build outputs
 dist/
-build/
+*/dist/
 .next/
-frontend/.next/
+*/.next/
+out/
+build/
+
+# Env files
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Prisma generated client
+backend/src/generated/prisma/
 
 # Logs
-*.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
 
-# Sistema
+# Cache
+.turbo/
+.cache/
+
+# Editor / OS
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-
-# Archivos temporales
-*.zip
-*.rar
+"@ | Set-Content -Encoding UTF8 .gitignore
