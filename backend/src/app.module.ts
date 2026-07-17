@@ -28,6 +28,7 @@ import { ReportsModule } from './modules/reports/reports.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { AuditLogsModule } from './modules/audit-logs/audit-logs.module';
 import { ComplaintBookModule } from './modules/complaint-book/complaint-book.module';
+import { ContinuityModule } from './continuity/continuity.module';
 
 @Module({
   imports: [
@@ -67,6 +68,7 @@ import { ComplaintBookModule } from './modules/complaint-book/complaint-book.mod
     NotificationsModule,
     AuditLogsModule,
     ComplaintBookModule,
+    ContinuityModule,
   ],
 
   providers: [

@@ -269,7 +269,11 @@ export const AuditAction = {
   REJECT: 'REJECT',
   EXPORT: 'EXPORT',
   PAYMENT: 'PAYMENT',
-  STATUS_CHANGE: 'STATUS_CHANGE'
+  STATUS_CHANGE: 'STATUS_CHANGE',
+  CREATE_BACKUP: 'CREATE_BACKUP',
+  CREATE_BACKUP_FAILED: 'CREATE_BACKUP_FAILED',
+  DOWNLOAD_BACKUP: 'DOWNLOAD_BACKUP',
+  RESTORE_BACKUP: 'RESTORE_BACKUP'
 } as const
 
 export type AuditAction = (typeof AuditAction)[keyof typeof AuditAction]
@@ -343,3 +347,22 @@ export const ComplaintAttachmentCategory = {
 } as const
 
 export type ComplaintAttachmentCategory = (typeof ComplaintAttachmentCategory)[keyof typeof ComplaintAttachmentCategory]
+
+
+export const BackupType = {
+  MANUAL: 'MANUAL',
+  AUTOMATIC: 'AUTOMATIC'
+} as const
+
+export type BackupType = (typeof BackupType)[keyof typeof BackupType]
+
+
+export const BackupStatus = {
+  PENDING: 'PENDING',
+  RUNNING: 'RUNNING',
+  SUCCESS: 'SUCCESS',
+  FAILED: 'FAILED',
+  RESTORED: 'RESTORED'
+} as const
+
+export type BackupStatus = (typeof BackupStatus)[keyof typeof BackupStatus]

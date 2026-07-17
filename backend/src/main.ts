@@ -9,8 +9,9 @@ async function bootstrap() {
    * CORS permite que el frontend en Next.js pueda consumir este backend.
    * En desarrollo usamos localhost:3000.
    */
+  const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
   app.enableCors({
-    origin: ['http://localhost:3000'],
+    origin: [frontendUrl, 'http://localhost:3000'],
     credentials: true,
   });
 

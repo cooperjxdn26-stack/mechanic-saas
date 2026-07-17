@@ -48,7 +48,11 @@ export type AppPermission =
   | "vehicles.delete"
   | "quotes.create"
   | "payments.create"
-  | "cashRegisters.open";
+  | "cashRegisters.open"
+  | "continuity.view"
+  | "continuity.create"
+  | "continuity.restore"
+  | "continuity.delete";
 
 const ROLE_PERMISSIONS: Record<string, AppPermission[]> = {
   SUPER_ADMIN: [
@@ -86,6 +90,10 @@ const ROLE_PERMISSIONS: Record<string, AppPermission[]> = {
     "quotes.create",
     "payments.create",
     "cashRegisters.open",
+    "continuity.view",
+    "continuity.create",
+    "continuity.restore",
+    "continuity.delete",
   ],
 
   ADMIN: [
@@ -119,6 +127,10 @@ const ROLE_PERMISSIONS: Record<string, AppPermission[]> = {
     "quotes.create",
     "payments.create",
     "cashRegisters.open",
+    "continuity.view",
+    "continuity.create",
+    "continuity.restore",
+    "continuity.delete",
   ],
 
   RECEPTIONIST: [

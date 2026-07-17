@@ -230,6 +230,7 @@ export type CompanyWhereInput = {
   parts?: Prisma.PartListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
   complaintBookEntries?: Prisma.ComplaintBookEntryListRelationFilter
+  backups?: Prisma.BackupListRelationFilter
 }
 
 export type CompanyOrderByWithRelationInput = {
@@ -251,6 +252,7 @@ export type CompanyOrderByWithRelationInput = {
   parts?: Prisma.PartOrderByRelationAggregateInput
   auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
   complaintBookEntries?: Prisma.ComplaintBookEntryOrderByRelationAggregateInput
+  backups?: Prisma.BackupOrderByRelationAggregateInput
 }
 
 export type CompanyWhereUniqueInput = Prisma.AtLeast<{
@@ -275,6 +277,7 @@ export type CompanyWhereUniqueInput = Prisma.AtLeast<{
   parts?: Prisma.PartListRelationFilter
   auditLogs?: Prisma.AuditLogListRelationFilter
   complaintBookEntries?: Prisma.ComplaintBookEntryListRelationFilter
+  backups?: Prisma.BackupListRelationFilter
 }, "id" | "ruc">
 
 export type CompanyOrderByWithAggregationInput = {
@@ -328,6 +331,7 @@ export type CompanyCreateInput = {
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateInput = {
@@ -349,6 +353,7 @@ export type CompanyUncheckedCreateInput = {
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUpdateInput = {
@@ -370,6 +375,7 @@ export type CompanyUpdateInput = {
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateInput = {
@@ -391,6 +397,7 @@ export type CompanyUncheckedUpdateInput = {
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateManyInput = {
@@ -623,6 +630,22 @@ export type CompanyUpdateOneWithoutComplaintBookEntriesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.CompanyUpdateToOneWithWhereWithoutComplaintBookEntriesInput, Prisma.CompanyUpdateWithoutComplaintBookEntriesInput>, Prisma.CompanyUncheckedUpdateWithoutComplaintBookEntriesInput>
 }
 
+export type CompanyCreateNestedOneWithoutBackupsInput = {
+  create?: Prisma.XOR<Prisma.CompanyCreateWithoutBackupsInput, Prisma.CompanyUncheckedCreateWithoutBackupsInput>
+  connectOrCreate?: Prisma.CompanyCreateOrConnectWithoutBackupsInput
+  connect?: Prisma.CompanyWhereUniqueInput
+}
+
+export type CompanyUpdateOneWithoutBackupsNestedInput = {
+  create?: Prisma.XOR<Prisma.CompanyCreateWithoutBackupsInput, Prisma.CompanyUncheckedCreateWithoutBackupsInput>
+  connectOrCreate?: Prisma.CompanyCreateOrConnectWithoutBackupsInput
+  upsert?: Prisma.CompanyUpsertWithoutBackupsInput
+  disconnect?: Prisma.CompanyWhereInput | boolean
+  delete?: Prisma.CompanyWhereInput | boolean
+  connect?: Prisma.CompanyWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.CompanyUpdateToOneWithWhereWithoutBackupsInput, Prisma.CompanyUpdateWithoutBackupsInput>, Prisma.CompanyUncheckedUpdateWithoutBackupsInput>
+}
+
 export type CompanyCreateWithoutBranchesInput = {
   id?: string
   name: string
@@ -641,6 +664,7 @@ export type CompanyCreateWithoutBranchesInput = {
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutBranchesInput = {
@@ -661,6 +685,7 @@ export type CompanyUncheckedCreateWithoutBranchesInput = {
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutBranchesInput = {
@@ -697,6 +722,7 @@ export type CompanyUpdateWithoutBranchesInput = {
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutBranchesInput = {
@@ -717,6 +743,7 @@ export type CompanyUncheckedUpdateWithoutBranchesInput = {
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutUsersInput = {
@@ -737,6 +764,7 @@ export type CompanyCreateWithoutUsersInput = {
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutUsersInput = {
@@ -757,6 +785,7 @@ export type CompanyUncheckedCreateWithoutUsersInput = {
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutUsersInput = {
@@ -793,6 +822,7 @@ export type CompanyUpdateWithoutUsersInput = {
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutUsersInput = {
@@ -813,6 +843,7 @@ export type CompanyUncheckedUpdateWithoutUsersInput = {
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutCustomersInput = {
@@ -833,6 +864,7 @@ export type CompanyCreateWithoutCustomersInput = {
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutCustomersInput = {
@@ -853,6 +885,7 @@ export type CompanyUncheckedCreateWithoutCustomersInput = {
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutCustomersInput = {
@@ -889,6 +922,7 @@ export type CompanyUpdateWithoutCustomersInput = {
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutCustomersInput = {
@@ -909,6 +943,7 @@ export type CompanyUncheckedUpdateWithoutCustomersInput = {
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutServicesInput = {
@@ -929,6 +964,7 @@ export type CompanyCreateWithoutServicesInput = {
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutServicesInput = {
@@ -949,6 +985,7 @@ export type CompanyUncheckedCreateWithoutServicesInput = {
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutServicesInput = {
@@ -985,6 +1022,7 @@ export type CompanyUpdateWithoutServicesInput = {
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutServicesInput = {
@@ -1005,6 +1043,7 @@ export type CompanyUncheckedUpdateWithoutServicesInput = {
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutPartsInput = {
@@ -1025,6 +1064,7 @@ export type CompanyCreateWithoutPartsInput = {
   services?: Prisma.ServiceCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutPartsInput = {
@@ -1045,6 +1085,7 @@ export type CompanyUncheckedCreateWithoutPartsInput = {
   services?: Prisma.ServiceUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutPartsInput = {
@@ -1081,6 +1122,7 @@ export type CompanyUpdateWithoutPartsInput = {
   services?: Prisma.ServiceUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutPartsInput = {
@@ -1101,6 +1143,7 @@ export type CompanyUncheckedUpdateWithoutPartsInput = {
   services?: Prisma.ServiceUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutSuppliersInput = {
@@ -1121,6 +1164,7 @@ export type CompanyCreateWithoutSuppliersInput = {
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutSuppliersInput = {
@@ -1141,6 +1185,7 @@ export type CompanyUncheckedCreateWithoutSuppliersInput = {
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutSuppliersInput = {
@@ -1177,6 +1222,7 @@ export type CompanyUpdateWithoutSuppliersInput = {
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutSuppliersInput = {
@@ -1197,6 +1243,7 @@ export type CompanyUncheckedUpdateWithoutSuppliersInput = {
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutAuditLogsInput = {
@@ -1217,6 +1264,7 @@ export type CompanyCreateWithoutAuditLogsInput = {
   services?: Prisma.ServiceCreateNestedManyWithoutCompanyInput
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutAuditLogsInput = {
@@ -1237,6 +1285,7 @@ export type CompanyUncheckedCreateWithoutAuditLogsInput = {
   services?: Prisma.ServiceUncheckedCreateNestedManyWithoutCompanyInput
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutAuditLogsInput = {
@@ -1273,6 +1322,7 @@ export type CompanyUpdateWithoutAuditLogsInput = {
   services?: Prisma.ServiceUpdateManyWithoutCompanyNestedInput
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutAuditLogsInput = {
@@ -1293,6 +1343,7 @@ export type CompanyUncheckedUpdateWithoutAuditLogsInput = {
   services?: Prisma.ServiceUncheckedUpdateManyWithoutCompanyNestedInput
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyCreateWithoutComplaintBookEntriesInput = {
@@ -1313,6 +1364,7 @@ export type CompanyCreateWithoutComplaintBookEntriesInput = {
   services?: Prisma.ServiceCreateNestedManyWithoutCompanyInput
   parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyUncheckedCreateWithoutComplaintBookEntriesInput = {
@@ -1333,6 +1385,7 @@ export type CompanyUncheckedCreateWithoutComplaintBookEntriesInput = {
   services?: Prisma.ServiceUncheckedCreateNestedManyWithoutCompanyInput
   parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCompanyInput
 }
 
 export type CompanyCreateOrConnectWithoutComplaintBookEntriesInput = {
@@ -1369,6 +1422,7 @@ export type CompanyUpdateWithoutComplaintBookEntriesInput = {
   services?: Prisma.ServiceUpdateManyWithoutCompanyNestedInput
   parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCompanyNestedInput
 }
 
 export type CompanyUncheckedUpdateWithoutComplaintBookEntriesInput = {
@@ -1389,6 +1443,107 @@ export type CompanyUncheckedUpdateWithoutComplaintBookEntriesInput = {
   services?: Prisma.ServiceUncheckedUpdateManyWithoutCompanyNestedInput
   parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCompanyNestedInput
+}
+
+export type CompanyCreateWithoutBackupsInput = {
+  id?: string
+  name: string
+  ruc?: string | null
+  email?: string | null
+  phone?: string | null
+  address?: string | null
+  logoUrl?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  branches?: Prisma.BranchCreateNestedManyWithoutCompanyInput
+  users?: Prisma.UserCreateNestedManyWithoutCompanyInput
+  customers?: Prisma.CustomerCreateNestedManyWithoutCompanyInput
+  suppliers?: Prisma.SupplierCreateNestedManyWithoutCompanyInput
+  services?: Prisma.ServiceCreateNestedManyWithoutCompanyInput
+  parts?: Prisma.PartCreateNestedManyWithoutCompanyInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutCompanyInput
+  complaintBookEntries?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCompanyInput
+}
+
+export type CompanyUncheckedCreateWithoutBackupsInput = {
+  id?: string
+  name: string
+  ruc?: string | null
+  email?: string | null
+  phone?: string | null
+  address?: string | null
+  logoUrl?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  branches?: Prisma.BranchUncheckedCreateNestedManyWithoutCompanyInput
+  users?: Prisma.UserUncheckedCreateNestedManyWithoutCompanyInput
+  customers?: Prisma.CustomerUncheckedCreateNestedManyWithoutCompanyInput
+  suppliers?: Prisma.SupplierUncheckedCreateNestedManyWithoutCompanyInput
+  services?: Prisma.ServiceUncheckedCreateNestedManyWithoutCompanyInput
+  parts?: Prisma.PartUncheckedCreateNestedManyWithoutCompanyInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutCompanyInput
+  complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCompanyInput
+}
+
+export type CompanyCreateOrConnectWithoutBackupsInput = {
+  where: Prisma.CompanyWhereUniqueInput
+  create: Prisma.XOR<Prisma.CompanyCreateWithoutBackupsInput, Prisma.CompanyUncheckedCreateWithoutBackupsInput>
+}
+
+export type CompanyUpsertWithoutBackupsInput = {
+  update: Prisma.XOR<Prisma.CompanyUpdateWithoutBackupsInput, Prisma.CompanyUncheckedUpdateWithoutBackupsInput>
+  create: Prisma.XOR<Prisma.CompanyCreateWithoutBackupsInput, Prisma.CompanyUncheckedCreateWithoutBackupsInput>
+  where?: Prisma.CompanyWhereInput
+}
+
+export type CompanyUpdateToOneWithWhereWithoutBackupsInput = {
+  where?: Prisma.CompanyWhereInput
+  data: Prisma.XOR<Prisma.CompanyUpdateWithoutBackupsInput, Prisma.CompanyUncheckedUpdateWithoutBackupsInput>
+}
+
+export type CompanyUpdateWithoutBackupsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  ruc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  branches?: Prisma.BranchUpdateManyWithoutCompanyNestedInput
+  users?: Prisma.UserUpdateManyWithoutCompanyNestedInput
+  customers?: Prisma.CustomerUpdateManyWithoutCompanyNestedInput
+  suppliers?: Prisma.SupplierUpdateManyWithoutCompanyNestedInput
+  services?: Prisma.ServiceUpdateManyWithoutCompanyNestedInput
+  parts?: Prisma.PartUpdateManyWithoutCompanyNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutCompanyNestedInput
+  complaintBookEntries?: Prisma.ComplaintBookEntryUpdateManyWithoutCompanyNestedInput
+}
+
+export type CompanyUncheckedUpdateWithoutBackupsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  ruc?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  branches?: Prisma.BranchUncheckedUpdateManyWithoutCompanyNestedInput
+  users?: Prisma.UserUncheckedUpdateManyWithoutCompanyNestedInput
+  customers?: Prisma.CustomerUncheckedUpdateManyWithoutCompanyNestedInput
+  suppliers?: Prisma.SupplierUncheckedUpdateManyWithoutCompanyNestedInput
+  services?: Prisma.ServiceUncheckedUpdateManyWithoutCompanyNestedInput
+  parts?: Prisma.PartUncheckedUpdateManyWithoutCompanyNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutCompanyNestedInput
+  complaintBookEntries?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCompanyNestedInput
 }
 
 
@@ -1405,6 +1560,7 @@ export type CompanyCountOutputType = {
   parts: number
   auditLogs: number
   complaintBookEntries: number
+  backups: number
 }
 
 export type CompanyCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1416,6 +1572,7 @@ export type CompanyCountOutputTypeSelect<ExtArgs extends runtime.Types.Extension
   parts?: boolean | CompanyCountOutputTypeCountPartsArgs
   auditLogs?: boolean | CompanyCountOutputTypeCountAuditLogsArgs
   complaintBookEntries?: boolean | CompanyCountOutputTypeCountComplaintBookEntriesArgs
+  backups?: boolean | CompanyCountOutputTypeCountBackupsArgs
 }
 
 /**
@@ -1484,6 +1641,13 @@ export type CompanyCountOutputTypeCountComplaintBookEntriesArgs<ExtArgs extends 
   where?: Prisma.ComplaintBookEntryWhereInput
 }
 
+/**
+ * CompanyCountOutputType without action
+ */
+export type CompanyCountOutputTypeCountBackupsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BackupWhereInput
+}
+
 
 export type CompanySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -1504,6 +1668,7 @@ export type CompanySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   parts?: boolean | Prisma.Company$partsArgs<ExtArgs>
   auditLogs?: boolean | Prisma.Company$auditLogsArgs<ExtArgs>
   complaintBookEntries?: boolean | Prisma.Company$complaintBookEntriesArgs<ExtArgs>
+  backups?: boolean | Prisma.Company$backupsArgs<ExtArgs>
   _count?: boolean | Prisma.CompanyCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["company"]>
 
@@ -1556,6 +1721,7 @@ export type CompanyInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   parts?: boolean | Prisma.Company$partsArgs<ExtArgs>
   auditLogs?: boolean | Prisma.Company$auditLogsArgs<ExtArgs>
   complaintBookEntries?: boolean | Prisma.Company$complaintBookEntriesArgs<ExtArgs>
+  backups?: boolean | Prisma.Company$backupsArgs<ExtArgs>
   _count?: boolean | Prisma.CompanyCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CompanyIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -1572,6 +1738,7 @@ export type $CompanyPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     parts: Prisma.$PartPayload<ExtArgs>[]
     auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
     complaintBookEntries: Prisma.$ComplaintBookEntryPayload<ExtArgs>[]
+    backups: Prisma.$BackupPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1986,6 +2153,7 @@ export interface Prisma__CompanyClient<T, Null = never, ExtArgs extends runtime.
   parts<T extends Prisma.Company$partsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$partsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PartPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   auditLogs<T extends Prisma.Company$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   complaintBookEntries<T extends Prisma.Company$complaintBookEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$complaintBookEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComplaintBookEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  backups<T extends Prisma.Company$backupsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Company$backupsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BackupPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2607,6 +2775,30 @@ export type Company$complaintBookEntriesArgs<ExtArgs extends runtime.Types.Exten
   take?: number
   skip?: number
   distinct?: Prisma.ComplaintBookEntryScalarFieldEnum | Prisma.ComplaintBookEntryScalarFieldEnum[]
+}
+
+/**
+ * Company.backups
+ */
+export type Company$backupsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Backup
+   */
+  select?: Prisma.BackupSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Backup
+   */
+  omit?: Prisma.BackupOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BackupInclude<ExtArgs> | null
+  where?: Prisma.BackupWhereInput
+  orderBy?: Prisma.BackupOrderByWithRelationInput | Prisma.BackupOrderByWithRelationInput[]
+  cursor?: Prisma.BackupWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BackupScalarFieldEnum | Prisma.BackupScalarFieldEnum[]
 }
 
 /**

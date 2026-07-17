@@ -42,6 +42,7 @@ export const routes = {
   users: "/dashboard/users",
   roles: "/dashboard/roles",
   complaintBook: "/dashboard/complaint-book",
+  continuity: "/dashboard/continuity",
 
   publicQuote: "/public/quotes",
 } as const;

@@ -43,6 +43,11 @@ const statusLabels: Record<string, string> = {
   READ: "Leída",
   FAILED: "Fallida",
   LOW_STOCK: "Stock bajo",
+
+  // Continuidad / Backups
+  SUCCESS: "Exitoso",
+  RUNNING: "Ejecutándose",
+  RESTORED: "Restaurado",
 };
 
 const statusVariants: Record<string, StatusBadgeVariant> = {
@@ -73,6 +78,11 @@ const statusVariants: Record<string, StatusBadgeVariant> = {
   REJECTED: "destructive",
   FAILED: "destructive",
   LOW_STOCK: "destructive",
+
+  // Continuidad / Backups
+  SUCCESS: "default",
+  RUNNING: "secondary",
+  RESTORED: "outline",
 };
 
 function normalizeStatus(value?: string | null): string {

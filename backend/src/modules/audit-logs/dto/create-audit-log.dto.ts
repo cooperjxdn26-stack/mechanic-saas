@@ -1,5 +1,5 @@
 import { IsEnum, IsObject, IsOptional, IsString } from 'class-validator';
-import { AuditAction } from '@prisma/client';
+import { AuditAction } from '../../../generated/prisma/client';
 
 export class CreateAuditLogDto {
   /*

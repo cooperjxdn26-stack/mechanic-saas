@@ -19,6 +19,7 @@ import {
   UserCog,
   Wallet,
   Wrench,
+  Database,
 } from "lucide-react";
 
 import { routes } from "./routes";
@@ -203,6 +204,12 @@ export const navigationGroups: NavigationGroup[] = [
         href: routes.complaintBook,
         icon: ClipboardList,
         permission: "settings.view",
+      },
+      {
+        title: "Continuidad",
+        href: routes.continuity,
+        icon: Database,
+        permission: "continuity.view",
       },
     ],
   },

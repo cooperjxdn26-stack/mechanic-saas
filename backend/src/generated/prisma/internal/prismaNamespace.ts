@@ -415,7 +415,8 @@ export const ModelName = {
   AuditLog: 'AuditLog',
   ComplaintBookEntry: 'ComplaintBookEntry',
   ComplaintBookAttachment: 'ComplaintBookAttachment',
-  ComplaintBookStatusHistory: 'ComplaintBookStatusHistory'
+  ComplaintBookStatusHistory: 'ComplaintBookStatusHistory',
+  Backup: 'Backup'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -431,7 +432,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "company" | "branch" | "user" | "role" | "permission" | "rolePermission" | "customer" | "vehicle" | "workOrder" | "workOrderStatusHistory" | "diagnostic" | "inspectionChecklist" | "service" | "part" | "inventoryMovement" | "supplier" | "purchase" | "purchaseItem" | "quote" | "quoteItem" | "invoice" | "payment" | "cashRegister" | "appointment" | "notification" | "attachment" | "comment" | "maintenanceReminder" | "auditLog" | "complaintBookEntry" | "complaintBookAttachment" | "complaintBookStatusHistory"
+    modelProps: "company" | "branch" | "user" | "role" | "permission" | "rolePermission" | "customer" | "vehicle" | "workOrder" | "workOrderStatusHistory" | "diagnostic" | "inspectionChecklist" | "service" | "part" | "inventoryMovement" | "supplier" | "purchase" | "purchaseItem" | "quote" | "quoteItem" | "invoice" | "payment" | "cashRegister" | "appointment" | "notification" | "attachment" | "comment" | "maintenanceReminder" | "auditLog" | "complaintBookEntry" | "complaintBookAttachment" | "complaintBookStatusHistory" | "backup"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2803,6 +2804,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Backup: {
+      payload: Prisma.$BackupPayload<ExtArgs>
+      fields: Prisma.BackupFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BackupFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BackupFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>
+        }
+        findFirst: {
+          args: Prisma.BackupFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BackupFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>
+        }
+        findMany: {
+          args: Prisma.BackupFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>[]
+        }
+        create: {
+          args: Prisma.BackupCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>
+        }
+        createMany: {
+          args: Prisma.BackupCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BackupCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>[]
+        }
+        delete: {
+          args: Prisma.BackupDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>
+        }
+        update: {
+          args: Prisma.BackupUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>
+        }
+        deleteMany: {
+          args: Prisma.BackupDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BackupUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BackupUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>[]
+        }
+        upsert: {
+          args: Prisma.BackupUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BackupPayload>
+        }
+        aggregate: {
+          args: Prisma.BackupAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBackup>
+        }
+        groupBy: {
+          args: Prisma.BackupGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BackupGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BackupCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BackupCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -3428,6 +3503,22 @@ export const ComplaintBookStatusHistoryScalarFieldEnum = {
 export type ComplaintBookStatusHistoryScalarFieldEnum = (typeof ComplaintBookStatusHistoryScalarFieldEnum)[keyof typeof ComplaintBookStatusHistoryScalarFieldEnum]
 
 
+export const BackupScalarFieldEnum = {
+  id: 'id',
+  filename: 'filename',
+  path: 'path',
+  type: 'type',
+  status: 'status',
+  size: 'size',
+  companyId: 'companyId',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BackupScalarFieldEnum = (typeof BackupScalarFieldEnum)[keyof typeof BackupScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -3987,6 +4078,34 @@ export type ListEnumComplaintAttachmentCategoryFieldRefInput<$PrismaModel> = Fie
 
 
 /**
+ * Reference to a field of type 'BackupType'
+ */
+export type EnumBackupTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BackupType'>
+    
+
+
+/**
+ * Reference to a field of type 'BackupType[]'
+ */
+export type ListEnumBackupTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BackupType[]'>
+    
+
+
+/**
+ * Reference to a field of type 'BackupStatus'
+ */
+export type EnumBackupStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BackupStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'BackupStatus[]'
+ */
+export type ListEnumBackupStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BackupStatus[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -4141,6 +4260,7 @@ export type GlobalOmitConfig = {
   complaintBookEntry?: Prisma.ComplaintBookEntryOmit
   complaintBookAttachment?: Prisma.ComplaintBookAttachmentOmit
   complaintBookStatusHistory?: Prisma.ComplaintBookStatusHistoryOmit
+  backup?: Prisma.BackupOmit
 }
 
 /* Types for Logging */

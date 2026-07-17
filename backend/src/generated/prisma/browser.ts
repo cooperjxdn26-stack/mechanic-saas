@@ -177,3 +177,8 @@ export type ComplaintBookAttachment = Prisma.ComplaintBookAttachmentModel
  * 
  */
 export type ComplaintBookStatusHistory = Prisma.ComplaintBookStatusHistoryModel
+/**
+ * Model Backup
+ * 
+ */
+export type Backup = Prisma.BackupModel

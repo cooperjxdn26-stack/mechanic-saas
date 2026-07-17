@@ -82,7 +82,8 @@ export const ModelName = {
   AuditLog: 'AuditLog',
   ComplaintBookEntry: 'ComplaintBookEntry',
   ComplaintBookAttachment: 'ComplaintBookAttachment',
-  ComplaintBookStatusHistory: 'ComplaintBookStatusHistory'
+  ComplaintBookStatusHistory: 'ComplaintBookStatusHistory',
+  Backup: 'Backup'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -685,6 +686,22 @@ export const ComplaintBookStatusHistoryScalarFieldEnum = {
 } as const
 
 export type ComplaintBookStatusHistoryScalarFieldEnum = (typeof ComplaintBookStatusHistoryScalarFieldEnum)[keyof typeof ComplaintBookStatusHistoryScalarFieldEnum]
+
+
+export const BackupScalarFieldEnum = {
+  id: 'id',
+  filename: 'filename',
+  path: 'path',
+  type: 'type',
+  status: 'status',
+  size: 'size',
+  companyId: 'companyId',
+  createdById: 'createdById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BackupScalarFieldEnum = (typeof BackupScalarFieldEnum)[keyof typeof BackupScalarFieldEnum]
 
 
 export const SortOrder = {

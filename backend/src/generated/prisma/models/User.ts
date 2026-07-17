@@ -257,6 +257,7 @@ export type UserWhereInput = {
   auditLogs?: Prisma.AuditLogListRelationFilter
   payments?: Prisma.PaymentListRelationFilter
   cashRegisters?: Prisma.CashRegisterListRelationFilter
+  backups?: Prisma.BackupListRelationFilter
   complaintsCreated?: Prisma.ComplaintBookEntryListRelationFilter
   complaintsResponsible?: Prisma.ComplaintBookEntryListRelationFilter
   complaintsAnswered?: Prisma.ComplaintBookEntryListRelationFilter
@@ -292,6 +293,7 @@ export type UserOrderByWithRelationInput = {
   auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
   payments?: Prisma.PaymentOrderByRelationAggregateInput
   cashRegisters?: Prisma.CashRegisterOrderByRelationAggregateInput
+  backups?: Prisma.BackupOrderByRelationAggregateInput
   complaintsCreated?: Prisma.ComplaintBookEntryOrderByRelationAggregateInput
   complaintsResponsible?: Prisma.ComplaintBookEntryOrderByRelationAggregateInput
   complaintsAnswered?: Prisma.ComplaintBookEntryOrderByRelationAggregateInput
@@ -330,6 +332,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   auditLogs?: Prisma.AuditLogListRelationFilter
   payments?: Prisma.PaymentListRelationFilter
   cashRegisters?: Prisma.CashRegisterListRelationFilter
+  backups?: Prisma.BackupListRelationFilter
   complaintsCreated?: Prisma.ComplaintBookEntryListRelationFilter
   complaintsResponsible?: Prisma.ComplaintBookEntryListRelationFilter
   complaintsAnswered?: Prisma.ComplaintBookEntryListRelationFilter
@@ -400,6 +403,7 @@ export type UserCreateInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -432,6 +436,7 @@ export type UserUncheckedCreateInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -464,6 +469,7 @@ export type UserUpdateInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -496,6 +502,7 @@ export type UserUncheckedUpdateInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -1000,6 +1007,22 @@ export type UserUpdateOneWithoutComplaintHistoriesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutComplaintHistoriesInput, Prisma.UserUpdateWithoutComplaintHistoriesInput>, Prisma.UserUncheckedUpdateWithoutComplaintHistoriesInput>
 }
 
+export type UserCreateNestedOneWithoutBackupsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBackupsInput, Prisma.UserUncheckedCreateWithoutBackupsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBackupsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutBackupsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutBackupsInput, Prisma.UserUncheckedCreateWithoutBackupsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutBackupsInput
+  upsert?: Prisma.UserUpsertWithoutBackupsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutBackupsInput, Prisma.UserUpdateWithoutBackupsInput>, Prisma.UserUncheckedUpdateWithoutBackupsInput>
+}
+
 export type UserCreateWithoutCompanyInput = {
   id?: string
   firstName: string
@@ -1021,6 +1044,7 @@ export type UserCreateWithoutCompanyInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1052,6 +1076,7 @@ export type UserUncheckedCreateWithoutCompanyInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1128,6 +1153,7 @@ export type UserCreateWithoutBranchInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1159,6 +1185,7 @@ export type UserUncheckedCreateWithoutBranchInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1216,6 +1243,7 @@ export type UserCreateWithoutRoleInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1247,6 +1275,7 @@ export type UserUncheckedCreateWithoutRoleInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1304,6 +1333,7 @@ export type UserCreateWithoutAssignedOrdersInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1335,6 +1365,7 @@ export type UserUncheckedCreateWithoutAssignedOrdersInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1371,6 +1402,7 @@ export type UserCreateWithoutCreatedOrdersInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1402,6 +1434,7 @@ export type UserUncheckedCreateWithoutCreatedOrdersInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1449,6 +1482,7 @@ export type UserUpdateWithoutAssignedOrdersInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -1480,6 +1514,7 @@ export type UserUncheckedUpdateWithoutAssignedOrdersInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -1522,6 +1557,7 @@ export type UserUpdateWithoutCreatedOrdersInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -1553,6 +1589,7 @@ export type UserUncheckedUpdateWithoutCreatedOrdersInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -1585,6 +1622,7 @@ export type UserCreateWithoutWorkOrderStatusHistoriesInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1616,6 +1654,7 @@ export type UserUncheckedCreateWithoutWorkOrderStatusHistoriesInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1663,6 +1702,7 @@ export type UserUpdateWithoutWorkOrderStatusHistoriesInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -1694,6 +1734,7 @@ export type UserUncheckedUpdateWithoutWorkOrderStatusHistoriesInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -1724,6 +1765,7 @@ export type UserCreateWithoutDiagnosticsInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1755,6 +1797,7 @@ export type UserUncheckedCreateWithoutDiagnosticsInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1802,6 +1845,7 @@ export type UserUpdateWithoutDiagnosticsInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -1833,6 +1877,7 @@ export type UserUncheckedUpdateWithoutDiagnosticsInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -1865,6 +1910,7 @@ export type UserCreateWithoutInventoryMovementsInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -1896,6 +1942,7 @@ export type UserUncheckedCreateWithoutInventoryMovementsInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -1943,6 +1990,7 @@ export type UserUpdateWithoutInventoryMovementsInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -1974,6 +2022,7 @@ export type UserUncheckedUpdateWithoutInventoryMovementsInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2004,6 +2053,7 @@ export type UserCreateWithoutPaymentsInput = {
   notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -2035,6 +2085,7 @@ export type UserUncheckedCreateWithoutPaymentsInput = {
   notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -2082,6 +2133,7 @@ export type UserUpdateWithoutPaymentsInput = {
   notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -2113,6 +2165,7 @@ export type UserUncheckedUpdateWithoutPaymentsInput = {
   notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2144,6 +2197,7 @@ export type UserCreateWithoutCashRegistersInput = {
   notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -2175,6 +2229,7 @@ export type UserUncheckedCreateWithoutCashRegistersInput = {
   notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -2222,6 +2277,7 @@ export type UserUpdateWithoutCashRegistersInput = {
   notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -2253,6 +2309,7 @@ export type UserUncheckedUpdateWithoutCashRegistersInput = {
   notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2284,6 +2341,7 @@ export type UserCreateWithoutNotificationsInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -2315,6 +2373,7 @@ export type UserUncheckedCreateWithoutNotificationsInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -2362,6 +2421,7 @@ export type UserUpdateWithoutNotificationsInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -2393,6 +2453,7 @@ export type UserUncheckedUpdateWithoutNotificationsInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2425,6 +2486,7 @@ export type UserCreateWithoutAttachmentsInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -2456,6 +2518,7 @@ export type UserUncheckedCreateWithoutAttachmentsInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -2503,6 +2566,7 @@ export type UserUpdateWithoutAttachmentsInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -2534,6 +2598,7 @@ export type UserUncheckedUpdateWithoutAttachmentsInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2564,6 +2629,7 @@ export type UserCreateWithoutCommentsInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -2595,6 +2661,7 @@ export type UserUncheckedCreateWithoutCommentsInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -2642,6 +2709,7 @@ export type UserUpdateWithoutCommentsInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -2673,6 +2741,7 @@ export type UserUncheckedUpdateWithoutCommentsInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2704,6 +2773,7 @@ export type UserCreateWithoutAuditLogsInput = {
   notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -2735,6 +2805,7 @@ export type UserUncheckedCreateWithoutAuditLogsInput = {
   notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -2782,6 +2853,7 @@ export type UserUpdateWithoutAuditLogsInput = {
   notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -2813,6 +2885,7 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
   notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -2845,6 +2918,7 @@ export type UserCreateWithoutComplaintsCreatedInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryCreateNestedManyWithoutChangedByInput
@@ -2876,6 +2950,7 @@ export type UserUncheckedCreateWithoutComplaintsCreatedInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
@@ -2912,6 +2987,7 @@ export type UserCreateWithoutComplaintsResponsibleInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryCreateNestedManyWithoutChangedByInput
@@ -2943,6 +3019,7 @@ export type UserUncheckedCreateWithoutComplaintsResponsibleInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
@@ -2979,6 +3056,7 @@ export type UserCreateWithoutComplaintsAnsweredInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryCreateNestedManyWithoutChangedByInput
@@ -3010,6 +3088,7 @@ export type UserUncheckedCreateWithoutComplaintsAnsweredInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
@@ -3057,6 +3136,7 @@ export type UserUpdateWithoutComplaintsCreatedInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUpdateManyWithoutChangedByNestedInput
@@ -3088,6 +3168,7 @@ export type UserUncheckedUpdateWithoutComplaintsCreatedInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
@@ -3130,6 +3211,7 @@ export type UserUpdateWithoutComplaintsResponsibleInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUpdateManyWithoutChangedByNestedInput
@@ -3161,6 +3243,7 @@ export type UserUncheckedUpdateWithoutComplaintsResponsibleInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
@@ -3203,6 +3286,7 @@ export type UserUpdateWithoutComplaintsAnsweredInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUpdateManyWithoutChangedByNestedInput
@@ -3234,6 +3318,7 @@ export type UserUncheckedUpdateWithoutComplaintsAnsweredInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
@@ -3265,6 +3350,7 @@ export type UserCreateWithoutComplaintAttachmentsInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -3296,6 +3382,7 @@ export type UserUncheckedCreateWithoutComplaintAttachmentsInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -3343,6 +3430,7 @@ export type UserUpdateWithoutComplaintAttachmentsInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -3374,6 +3462,7 @@ export type UserUncheckedUpdateWithoutComplaintAttachmentsInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -3405,6 +3494,7 @@ export type UserCreateWithoutComplaintHistoriesInput = {
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
@@ -3436,6 +3526,7 @@ export type UserUncheckedCreateWithoutComplaintHistoriesInput = {
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
   payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
   cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  backups?: Prisma.BackupUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
@@ -3483,6 +3574,7 @@ export type UserUpdateWithoutComplaintHistoriesInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -3514,9 +3606,154 @@ export type UserUncheckedUpdateWithoutComplaintHistoriesInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
+  complaintAttachments?: Prisma.ComplaintBookAttachmentUncheckedUpdateManyWithoutUploadedByNestedInput
+  workOrderStatusHistories?: Prisma.WorkOrderStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+  inventoryMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
+  attachments?: Prisma.AttachmentUncheckedUpdateManyWithoutUploadedByNestedInput
+}
+
+export type UserCreateWithoutBackupsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  phone?: string | null
+  avatarUrl?: string | null
+  status?: $Enums.UserStatus
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  company?: Prisma.CompanyCreateNestedOneWithoutUsersInput
+  branch?: Prisma.BranchCreateNestedOneWithoutUsersInput
+  role?: Prisma.RoleCreateNestedOneWithoutUsersInput
+  assignedOrders?: Prisma.WorkOrderCreateNestedManyWithoutMechanicInput
+  createdOrders?: Prisma.WorkOrderCreateNestedManyWithoutCreatedByInput
+  diagnostics?: Prisma.DiagnosticCreateNestedManyWithoutMechanicInput
+  comments?: Prisma.CommentCreateNestedManyWithoutUserInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutUserInput
+  payments?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  cashRegisters?: Prisma.CashRegisterCreateNestedManyWithoutOpenedByInput
+  complaintsCreated?: Prisma.ComplaintBookEntryCreateNestedManyWithoutCreatedByInput
+  complaintsResponsible?: Prisma.ComplaintBookEntryCreateNestedManyWithoutResponsibleInput
+  complaintsAnswered?: Prisma.ComplaintBookEntryCreateNestedManyWithoutAnsweredByInput
+  complaintHistories?: Prisma.ComplaintBookStatusHistoryCreateNestedManyWithoutChangedByInput
+  complaintAttachments?: Prisma.ComplaintBookAttachmentCreateNestedManyWithoutUploadedByInput
+  workOrderStatusHistories?: Prisma.WorkOrderStatusHistoryCreateNestedManyWithoutChangedByInput
+  inventoryMovements?: Prisma.InventoryMovementCreateNestedManyWithoutCreatedByInput
+  attachments?: Prisma.AttachmentCreateNestedManyWithoutUploadedByInput
+}
+
+export type UserUncheckedCreateWithoutBackupsInput = {
+  id?: string
+  firstName: string
+  lastName: string
+  email: string
+  password: string
+  phone?: string | null
+  avatarUrl?: string | null
+  status?: $Enums.UserStatus
+  companyId?: string | null
+  branchId?: string | null
+  roleId?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  assignedOrders?: Prisma.WorkOrderUncheckedCreateNestedManyWithoutMechanicInput
+  createdOrders?: Prisma.WorkOrderUncheckedCreateNestedManyWithoutCreatedByInput
+  diagnostics?: Prisma.DiagnosticUncheckedCreateNestedManyWithoutMechanicInput
+  comments?: Prisma.CommentUncheckedCreateNestedManyWithoutUserInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutUserInput
+  payments?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  cashRegisters?: Prisma.CashRegisterUncheckedCreateNestedManyWithoutOpenedByInput
+  complaintsCreated?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutCreatedByInput
+  complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutResponsibleInput
+  complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedCreateNestedManyWithoutAnsweredByInput
+  complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  complaintAttachments?: Prisma.ComplaintBookAttachmentUncheckedCreateNestedManyWithoutUploadedByInput
+  workOrderStatusHistories?: Prisma.WorkOrderStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+  inventoryMovements?: Prisma.InventoryMovementUncheckedCreateNestedManyWithoutCreatedByInput
+  attachments?: Prisma.AttachmentUncheckedCreateNestedManyWithoutUploadedByInput
+}
+
+export type UserCreateOrConnectWithoutBackupsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutBackupsInput, Prisma.UserUncheckedCreateWithoutBackupsInput>
+}
+
+export type UserUpsertWithoutBackupsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutBackupsInput, Prisma.UserUncheckedUpdateWithoutBackupsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutBackupsInput, Prisma.UserUncheckedCreateWithoutBackupsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutBackupsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutBackupsInput, Prisma.UserUncheckedUpdateWithoutBackupsInput>
+}
+
+export type UserUpdateWithoutBackupsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  company?: Prisma.CompanyUpdateOneWithoutUsersNestedInput
+  branch?: Prisma.BranchUpdateOneWithoutUsersNestedInput
+  role?: Prisma.RoleUpdateOneWithoutUsersNestedInput
+  assignedOrders?: Prisma.WorkOrderUpdateManyWithoutMechanicNestedInput
+  createdOrders?: Prisma.WorkOrderUpdateManyWithoutCreatedByNestedInput
+  diagnostics?: Prisma.DiagnosticUpdateManyWithoutMechanicNestedInput
+  comments?: Prisma.CommentUpdateManyWithoutUserNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
+  payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
+  complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
+  complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
+  complaintHistories?: Prisma.ComplaintBookStatusHistoryUpdateManyWithoutChangedByNestedInput
+  complaintAttachments?: Prisma.ComplaintBookAttachmentUpdateManyWithoutUploadedByNestedInput
+  workOrderStatusHistories?: Prisma.WorkOrderStatusHistoryUpdateManyWithoutChangedByNestedInput
+  inventoryMovements?: Prisma.InventoryMovementUpdateManyWithoutCreatedByNestedInput
+  attachments?: Prisma.AttachmentUpdateManyWithoutUploadedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutBackupsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumUserStatusFieldUpdateOperationsInput | $Enums.UserStatus
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  branchId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  roleId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  assignedOrders?: Prisma.WorkOrderUncheckedUpdateManyWithoutMechanicNestedInput
+  createdOrders?: Prisma.WorkOrderUncheckedUpdateManyWithoutCreatedByNestedInput
+  diagnostics?: Prisma.DiagnosticUncheckedUpdateManyWithoutMechanicNestedInput
+  comments?: Prisma.CommentUncheckedUpdateManyWithoutUserNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
+  payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
+  complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
+  complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
+  complaintHistories?: Prisma.ComplaintBookStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
   complaintAttachments?: Prisma.ComplaintBookAttachmentUncheckedUpdateManyWithoutUploadedByNestedInput
   workOrderStatusHistories?: Prisma.WorkOrderStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
   inventoryMovements?: Prisma.InventoryMovementUncheckedUpdateManyWithoutCreatedByNestedInput
@@ -3559,6 +3796,7 @@ export type UserUpdateWithoutCompanyInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -3590,6 +3828,7 @@ export type UserUncheckedUpdateWithoutCompanyInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -3651,6 +3890,7 @@ export type UserUpdateWithoutBranchInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -3682,6 +3922,7 @@ export type UserUncheckedUpdateWithoutBranchInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -3743,6 +3984,7 @@ export type UserUpdateWithoutRoleInput = {
   auditLogs?: Prisma.AuditLogUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUpdateManyWithoutAnsweredByNestedInput
@@ -3774,6 +4016,7 @@ export type UserUncheckedUpdateWithoutRoleInput = {
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutUserNestedInput
   payments?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
   cashRegisters?: Prisma.CashRegisterUncheckedUpdateManyWithoutOpenedByNestedInput
+  backups?: Prisma.BackupUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsCreated?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutCreatedByNestedInput
   complaintsResponsible?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutResponsibleNestedInput
   complaintsAnswered?: Prisma.ComplaintBookEntryUncheckedUpdateManyWithoutAnsweredByNestedInput
@@ -3813,6 +4056,7 @@ export type UserCountOutputType = {
   auditLogs: number
   payments: number
   cashRegisters: number
+  backups: number
   complaintsCreated: number
   complaintsResponsible: number
   complaintsAnswered: number
@@ -3832,6 +4076,7 @@ export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   auditLogs?: boolean | UserCountOutputTypeCountAuditLogsArgs
   payments?: boolean | UserCountOutputTypeCountPaymentsArgs
   cashRegisters?: boolean | UserCountOutputTypeCountCashRegistersArgs
+  backups?: boolean | UserCountOutputTypeCountBackupsArgs
   complaintsCreated?: boolean | UserCountOutputTypeCountComplaintsCreatedArgs
   complaintsResponsible?: boolean | UserCountOutputTypeCountComplaintsResponsibleArgs
   complaintsAnswered?: boolean | UserCountOutputTypeCountComplaintsAnsweredArgs
@@ -3906,6 +4151,13 @@ export type UserCountOutputTypeCountPaymentsArgs<ExtArgs extends runtime.Types.E
  */
 export type UserCountOutputTypeCountCashRegistersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.CashRegisterWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountBackupsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BackupWhereInput
 }
 
 /**
@@ -3990,6 +4242,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
   payments?: boolean | Prisma.User$paymentsArgs<ExtArgs>
   cashRegisters?: boolean | Prisma.User$cashRegistersArgs<ExtArgs>
+  backups?: boolean | Prisma.User$backupsArgs<ExtArgs>
   complaintsCreated?: boolean | Prisma.User$complaintsCreatedArgs<ExtArgs>
   complaintsResponsible?: boolean | Prisma.User$complaintsResponsibleArgs<ExtArgs>
   complaintsAnswered?: boolean | Prisma.User$complaintsAnsweredArgs<ExtArgs>
@@ -4068,6 +4321,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
   payments?: boolean | Prisma.User$paymentsArgs<ExtArgs>
   cashRegisters?: boolean | Prisma.User$cashRegistersArgs<ExtArgs>
+  backups?: boolean | Prisma.User$backupsArgs<ExtArgs>
   complaintsCreated?: boolean | Prisma.User$complaintsCreatedArgs<ExtArgs>
   complaintsResponsible?: boolean | Prisma.User$complaintsResponsibleArgs<ExtArgs>
   complaintsAnswered?: boolean | Prisma.User$complaintsAnsweredArgs<ExtArgs>
@@ -4103,6 +4357,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
     payments: Prisma.$PaymentPayload<ExtArgs>[]
     cashRegisters: Prisma.$CashRegisterPayload<ExtArgs>[]
+    backups: Prisma.$BackupPayload<ExtArgs>[]
     complaintsCreated: Prisma.$ComplaintBookEntryPayload<ExtArgs>[]
     complaintsResponsible: Prisma.$ComplaintBookEntryPayload<ExtArgs>[]
     complaintsAnswered: Prisma.$ComplaintBookEntryPayload<ExtArgs>[]
@@ -4531,6 +4786,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   auditLogs<T extends Prisma.User$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   payments<T extends Prisma.User$paymentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$paymentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   cashRegisters<T extends Prisma.User$cashRegistersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$cashRegistersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CashRegisterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  backups<T extends Prisma.User$backupsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$backupsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BackupPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   complaintsCreated<T extends Prisma.User$complaintsCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$complaintsCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComplaintBookEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   complaintsResponsible<T extends Prisma.User$complaintsResponsibleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$complaintsResponsibleArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComplaintBookEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   complaintsAnswered<T extends Prisma.User$complaintsAnsweredArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$complaintsAnsweredArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ComplaintBookEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -5228,6 +5484,30 @@ export type User$cashRegistersArgs<ExtArgs extends runtime.Types.Extensions.Inte
   take?: number
   skip?: number
   distinct?: Prisma.CashRegisterScalarFieldEnum | Prisma.CashRegisterScalarFieldEnum[]
+}
+
+/**
+ * User.backups
+ */
+export type User$backupsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Backup
+   */
+  select?: Prisma.BackupSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Backup
+   */
+  omit?: Prisma.BackupOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BackupInclude<ExtArgs> | null
+  where?: Prisma.BackupWhereInput
+  orderBy?: Prisma.BackupOrderByWithRelationInput | Prisma.BackupOrderByWithRelationInput[]
+  cursor?: Prisma.BackupWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BackupScalarFieldEnum | Prisma.BackupScalarFieldEnum[]
 }
 
 /**

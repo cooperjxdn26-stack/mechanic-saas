@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "frequency": "DAILY",
+  "hour": 2,
+  "minute": 0,
+  "dayOfWeek": 1,
+  "maxBackups": 5,
+  "lastExecuted": null
+}
